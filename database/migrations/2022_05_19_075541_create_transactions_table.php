@@ -18,7 +18,7 @@ class CreateTransactionsTable extends Migration
             $table->foreignId('plan_id');
             $table->foreignId('admin_id');
             $table->foreignId('method_payment_id');
-            $table->enum('paid_status', ['success', 'failed']);
+            $table->enum('paid_status', ['success', 'failed'])->nullable();
             $table->string('proof_of_payment');
             $table->timestamp('paid_at')->nullable();
             $table->timestamps();
