@@ -17,7 +17,7 @@ class CreateCoursesTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('desc');
-            $table->string('thumb_img')->unique();
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

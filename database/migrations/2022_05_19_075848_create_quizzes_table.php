@@ -16,7 +16,6 @@ class CreateQuizzesTable extends Migration
         Schema::create('quizzes', function (Blueprint $table) {
             $table->id();
             $table->foreignId('playlist_id');
-            $table->foreignId('course_id');
             $table->string('name');
             $table->enum('type', ['Multiple Choice', 'Short Answer']);
             $table->text('content');

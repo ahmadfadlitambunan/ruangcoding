@@ -15,11 +15,11 @@ class CreateVideosTable extends Migration
     {
         Schema::create('videos', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('course_id');
             $table->foreignId('playlist_id');
-            $table->string('file_name')->unique();
+            $table->string('file_name');
+            $table->string('thumb_img')->nullable();
             $table->string('title');
-            $table->string('desc');
+            $table->text('desc');
             $table->enum('access_type', ['free', 'premium']);
             $table->timestamps();
         });
