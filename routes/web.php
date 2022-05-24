@@ -8,6 +8,10 @@ use App\Http\Controllers\PlaylistController;
 use App\Http\Controllers\DashboardPlanController;
 use App\Http\Controllers\DashboardVideoController;
 use App\Http\Controllers\DashboardCourseController;
+use App\Http\Controllers\DashboardPlaylistController;
+use App\Http\Controllers\DashboardAdminController;
+use App\Http\Controllers\DashboardUserController;
+use App\Http\Controllers\SearchController;
 
 
 /*
@@ -38,9 +42,13 @@ Route::get('/dashboard', function(){
 });
 
 Route::resource('/dashboard/plans', DashboardPlanController::class);
-
-
 Route::resource('/dashboard/courses', DashboardCourseController::class);
+Route::resource('/dashboard/playlists', DashboardPlaylistController::class);
+
 Route::resource('/dashboard/videos', DashboardVideoController::class);
 
+Route::resource('/dashboard/admins', DashboardAdminController::class);
+Route::resource('/dashboard/users', DashboardUserController::class);
+
+Route::get('/search', [SearchController::class, 'search']);
 

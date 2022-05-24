@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Course;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class DashboardCourseController extends Controller
 {
@@ -26,7 +27,9 @@ class DashboardCourseController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.courses.create', [
+            'courses' => Course::all()
+        ]);
     }
 
     /**
@@ -37,7 +40,20 @@ class DashboardCourseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|max:255|unique:courses',
+            'desc' => 'required',
+            'image' => 'image|file|max:2000'
+        ]);
+        
+        if($request->file('image')) {
+            $validatedData['image'] = $request->file('image')->store('course-images');
+        }
+
+        $validatedData['desc'] = strip_tags($request->desc);
+        Course::create($validatedData);
+
+        return redirect('/dashboard/courses')->with('success', "Kelas Baru Telah Ditambahkan");
     }
 
     /**
@@ -61,7 +77,10 @@ class DashboardCourseController extends Controller
      */
     public function edit(Course $course)
     {
-        //
+        return view('dashboard.courses.edit', [
+            'course' => $course,
+            'courses' => Course::all(),
+        ]);
     }
 
     /**
@@ -73,7 +92,30 @@ class DashboardCourseController extends Controller
      */
     public function update(Request $request, Course $course)
     {
-        //
+        $rules = [
+            'desc' => 'required',
+            'image' => 'image|file|max:2000'
+        ];
+
+        if($request->name != $course->name) {
+            $rules['name'] = 'required|max:255|unique:courses';
+        }
+
+        $validatedData = $request->validate($rules);
+
+        if($request->file('image')) {
+            if($request->oldImage) {
+                Storage::delete($request->oldImage);
+            }
+            $validatedData['image'] = $request->file('image')->store('course-images');
+        }
+
+        $validatedData['desc'] = strip_tags($request->desc);
+        
+        Course::where('id', $course->id)
+            ->update($validatedData);
+
+        return redirect('/dashboard/courses')->with('success', "Kelas Telah Diubah");
     }
 
     /**
@@ -84,6 +126,10 @@ class DashboardCourseController extends Controller
      */
     public function destroy(Course $course)
     {
-        //
+        if($course->image) {
+            Storage::delete($course->image);
+        }
+        Course::destroy($course->id);
+        return redirect('/dashboard/courses')->with('success', "Kelas Telah Berhasil Dihapus");
     }
 }

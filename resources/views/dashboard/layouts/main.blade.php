@@ -21,7 +21,7 @@
     <link href="/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Bar Icon -->
-    <link rel="shortcut icon" href="/img/logo5.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/images/logo5.png" type="image/x-icon">
 
     <!-- data tables -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">

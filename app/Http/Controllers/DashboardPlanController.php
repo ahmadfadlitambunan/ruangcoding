@@ -48,6 +48,7 @@ class DashboardPlanController extends Controller
             'durationInform' => 'required'
         ]);
 
+        $request['desc'] = strip_tags($request->desc);
         $request['duration'] = $request['durationMany'] . " ". $request['durationInform'] ;
         $result = Plan::create($request->except('courses', 'durationMany', 'durationInform'));
 
@@ -131,6 +132,6 @@ class DashboardPlanController extends Controller
     public function destroy(Plan $plan)
     {
         Plan::destroy($plan->id);
-        return redirect('/dashboard/plans')->with('success', "Rencana telah berhasil dihapus");
+        return redirect('/dashboard/plans')->with('success', "Rencana Telah Berhasil Dihapus");
     }
 }
