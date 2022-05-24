@@ -11,15 +11,7 @@ use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\DashboardPlanController;
 use App\Http\Controllers\DashboardVideoController;
 use App\Http\Controllers\DashboardCourseController;
-<<<<<<< HEAD
 use App\Http\Controllers\DashboardTransactionController;
-=======
-use App\Http\Controllers\DashboardPlaylistController;
-use App\Http\Controllers\DashboardAdminController;
-use App\Http\Controllers\DashboardUserController;
-use App\Http\Controllers\SearchController;
-
->>>>>>> 42fcdb27c2ffea8d21f76d171eb2dc644d8f20de
 
 /*
 |--------------------------------------------------------------------------
@@ -54,7 +46,6 @@ Route::resource('/dashboard/playlists', DashboardPlaylistController::class);
 
 Route::resource('/dashboard/videos', DashboardVideoController::class);
 
-<<<<<<< HEAD
 Route::get('/dashboard/transaksi', [DashboardTransactionController::class, 'index']);
 Route::get('/dashboard/verifikasi-transaksi', [DashboardTransactionController::class, 'needverif']);
 
@@ -78,11 +69,9 @@ Route::get('/paket-belajar/{plan_id}', [TransactionController::class, 'setUpTran
 Route::post('/buat-transaksi', [TransactionController::class, 'makeTransaction']);
 
 Route::put('/upload-pay/{trans}', [TransactionController::class, 'updatePay']);
-=======
 Route::resource('/dashboard/admins', DashboardAdminController::class);
 Route::resource('/dashboard/users', DashboardUserController::class);
 
 Route::get('/search', [SearchController::class, 'search']);
->>>>>>> 42fcdb27c2ffea8d21f76d171eb2dc644d8f20de
 
 Route::get('/upload-pay/{trans}/edit', [TransactionController::class, 'editPay']);
