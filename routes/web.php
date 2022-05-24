@@ -1,18 +1,21 @@
 <?php
 
+use App\Models\Plan;
+use App\Models\Course;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PlanController;
 use App\Http\Controllers\VideoController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\CourseController;  
 use App\Http\Controllers\PlaylistController;
+use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\DashboardPlanController;
+use App\Http\Controllers\DashboardUserController;
+use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\DashboardVideoController;
 use App\Http\Controllers\DashboardCourseController;
-use App\Http\Controllers\DashboardTransactionController;
 use App\Http\Controllers\DashboardPlaylistController;
-use App\Http\Controllers\DashboardAdminController;
-use App\Http\Controllers\DashboardUserController;
-use App\Http\Controllers\SearchController;
+use App\Http\Controllers\DashboardTransactionController;
 
 
 
