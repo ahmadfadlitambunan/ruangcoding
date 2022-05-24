@@ -2442,3 +2442,21 @@ responsive
   padding-bottom: 20px;
   color: #2a2a2a;
 }
+
+.tombolcari *{
+  box-sizing: border-box;
+  text-transform: capitalize;
+}
+
+.tombolcari .cari-banner {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  padding: 120px 120px 70px 120px;
+  position: relative;
+  overflow: hidden;
+}
+
+.tombolcari .card {
+  box-shadow : 20px 10px 35px 10px #88888817;
+}

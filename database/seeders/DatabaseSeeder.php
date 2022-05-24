@@ -2,8 +2,13 @@
 
 namespace Database\Seeders;
 use App\Models\Plan;
+<<<<<<< HEAD
 
 use App\Models\User;
+=======
+use App\Models\User;
+use App\Models\Admin;
+>>>>>>> 42fcdb27c2ffea8d21f76d171eb2dc644d8f20de
 use App\Models\Video;
 
 use App\Models\Course;
@@ -96,6 +101,43 @@ class DatabaseSeeder extends Seeder
             'duration' => '1 year'
         ]);
 
+        //seeder user
+        User::create([
+            'name' => "Nadya",
+            'email' => 'nadya@gmail.com',
+            'no_phone' => '085211111111',
+            'password'=>bcrypt('12345678'),
+            'gender' => 'female'
+        ]);
+
+        User::create([
+            'name' => "Joko",
+            'email' => 'joko@gmail.com',
+            'no_phone' => '08123456789',
+            'password'=>bcrypt('abcdefghij'),
+            'gender' => 'male'
+        ]);
+
+        User::create([
+            'name' => "Jay",
+            'email' => 'jay@gmail.com',
+            'no_phone' => '08987654321',
+            'password'=>bcrypt('testestes'),
+            'gender' => 'male'
+        ]);
+
+        //seeder admin
+        Admin::create([
+            'email' => 'barbie@gmail.com',
+            'name' => "Barbie",
+            'password'=>bcrypt('12345678')
+        ]);
+
+        Admin::create([
+            'email' => 'nadin@gmail.com',
+            'name' => "Nadin",
+            'password'=>bcrypt('pass12345')
+        ]);
         
         // CoursePlan::create([
         //     'plan_id' => 1,

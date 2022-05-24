@@ -14,7 +14,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="/dashboard">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -26,13 +26,13 @@
             </div>
 
             <li class="nav-item">
-                <a class="nav-link" href="../belajar/index.html">
+                <a class="nav-link" href="/">
                     <i class="fa fa-home"></i>
                     <span>Home</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../belajar/ruangbelajar.html">
-                    <i class="fa fa-newspaper"></i>
+                <a class="nav-link" href="/belajar">
+                    <i class="fa fa-book"></i>
                     <span>Belajar</span></a>
             </li>
 
@@ -46,12 +46,17 @@
 
             <!-- Nav Item - Data Users -->
             <li class="nav-item">
-                <a class="nav-link" href="../admin/users.html">
-                    <i class="fas fa-fw fa-users" aria-hidden="true"></i>
-                    <span>Pengguna</span>
+                <a class="nav-link" href="/dashboard/admins">
+                    <i class="fas fa-fw fa-user" aria-hidden="true"></i>
+                    <span>Admin</span>
                 </a> 
             </li>
-
+            <li class="nav-item">
+                <a class="nav-link" href="/dashboard/users">
+                    <i class="fas fa-fw fa-users" aria-hidden="true"></i>
+                    <span>User</span>
+                </a> 
+            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -64,24 +69,24 @@
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link" href="/dashboard/plans">
-                    <i class="fas fa-brackets-curly"></i>
+                    <i class="fa fa-folder-open"></i>
                     <span>Daftar Rencana Belajar</span>
                 </a>
                 <a class="nav-link" href="/dashboard/courses">
-                    <i class="fa fa-newspaper" aria-hidden="true"></i>
+                    <i class="fa fa-list-alt" aria-hidden="true"></i>
                     <span>Daftar Kelas</span>
                 </a>
-                <a class="nav-link" href="/dashboard/playlist">
-                    <i class="fa fa-comments" aria-hidden="true"></i>
+                <a class="nav-link" href="/dashboard/playlists">
+                    <i class="fa fa-play-circle" aria-hidden="true"></i>
                     <span>Daftar Playlist</span>
                 </a>
                 <a class="nav-link" href="/dashboard/videos">
-                    <i class="fa fa-comments" aria-hidden="true"></i>
+                    <i class="fa fa-video-camera" aria-hidden="true"></i>
                     <span>Video</span>
                 </a>
                 <a class="nav-link" href="/dashboard/quizzes">
-                    <i class="fa fa-comments" aria-hidden="true"></i>
-                    <span>Video</span>
+                    <i class="fa fa-tasks" aria-hidden="true"></i>
+                    <span>Quiz</span>
                 </a>
             </li>
 

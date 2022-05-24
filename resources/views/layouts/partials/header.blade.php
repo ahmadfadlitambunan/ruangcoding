@@ -13,9 +13,11 @@
             <ul class="nav">
               <div class="inner-form">
                 <div class="input-field">
-                  <form>
-                    <input class="search" type="text" placeholder="Ketik untuk mencari..." required>	
-                    <input class="button" type="button" value="Cari">		
+                  <form action="/search" method="GET">
+                    <div class="input-group">
+                      <input type="text" class="search form-control" placeholder="Mau belajar apa hari ini?" name="search">	
+                      <button class="button" type="submit">Cari</button>	
+                    </div>
                   </form>
                 </div>
               </div>

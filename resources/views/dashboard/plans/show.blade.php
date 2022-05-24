@@ -6,6 +6,12 @@
     <h4>Daftar Kelas di {{ $plan->name }}</h4>
   </div>
   <div class="card-body">
+    <div class="row">
+      <div class="col-md-8">
+          {{ $plan->desc }}
+      </div>
+    </div>
+    <hr>
     <div id="courses" class="row justify-content-center">
         @foreach ($plan->courses as $course)
         <div class="col-md-2 mx-1 my-2">

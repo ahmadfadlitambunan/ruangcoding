@@ -13,8 +13,8 @@
             @endif
             <div class="card shadow mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center">
-                    <h6 class="mr-auto font-weight-bold text-primary">Daftar Kelas</h6>
-                    <a href="/dashboard/courses/create" class="btn btn-primary mx-2">Buat Kelas Baru</a>
+                    <h6 class="mr-auto font-weight-bold text-primary">Daftar Admin</h6>
+                    <a href="/dashboard/admins/create" class="btn btn-primary mx-2">Buat Admin Baru</a>
                     <form method="GET" onsubmit="return confirm ('Download Pdf Daftar Posting?')" action="pdf.php?pdf=2">
                         <button type='submit' name='btnpost'class='btn btn-outline-primary'>Report</button>
                     </form>
@@ -26,24 +26,22 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Nama</th>
-                                    {{-- <th>Gambar</th> --}}
-                                    <th>Jumlah Playlist</th>
+                                    <th>Email</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($courses as $course)      
+                                @foreach ($admins as $admin)      
                                 <tr>
                                      <td>{{ $loop->iteration }}</td>
-                                     <td>{{ $course->name }}</td>
-                                     {{-- <td>{{ $course->image}}</td> --}}
-                                     <td>{{ $course->playlists->count() }}</td>
+                                     <td>{{ $admin->name }}</td>
+                                     <td>{{ $admin->email }}</td>
                                      <td >
-                                         <a href="/dashboard/courses/{{ $course->id }}" class="btn btn-sm btn-success"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                         <a href="/dashboard/admins/{{ $admin->id }}" class="btn btn-sm btn-success"><i class="fa fa-eye" aria-hidden="true"></i></a>
                 
-                                        <a href="/dashboard/courses/{{ $course->id }}/edit" class="btn btn-sm btn-warning"><i class="fa fa-edit" aria-hidden="true"></i></a>
+                                        <a href="/dashboard/admins/{{ $admin->id }}/edit" class="btn btn-sm btn-warning"><i class="fa fa-edit" aria-hidden="true"></i></a>
                                 
-                                        <form action="/dashboard/courses/{{ $course->id }}" method="POST" class="d-inline">
+                                        <form action="/dashboard/admins/{{ $admin->id }}" method="POST" class="d-inline">
                                         @method('delete')
                                         @csrf
                                         <button class="btn btn-sm btn-danger" onclick="return confirm('Apakah anda yakin?')"><i class="fa fa-trash" aria-hidden="true"></i></button>
