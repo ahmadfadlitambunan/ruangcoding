@@ -130,69 +130,6 @@
   </div>
 </div>
 
-<!-- TESTIMONI -->
-<div id="clients" class="the-clients">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 offset-lg-2">
-        <div class="section-heading">
-          <h4>Apa yang <em>Alumni Katakan</em> Tentang RuangCoding</h4>
-          <img src="/images/heading-line-dec.png" alt="">
-          <p>RuangCoding telah dipercaya untuk memberikan pembelajaran. <br> Inilah testinomi yang telah diberikan para pembelajar.</p>
-        </div>
-      </div>
-      <div class="col-lg-5">
-        <div class="naccs">
-          <div class="grid">
-            <ul class="nacc">
-              <li class="active">
-                <div>
-                  <div class="thumb">
-                    <div class="row">
-                      <div class="client-content">
-                        <img src="/images/quote.png" alt="">
-                        <p>“Mengandalkan kuliah saja, tidak cukup. 
-                          Dengan RuangCoding, saya mantap tinggalkan dunia gaming lantas belajar dunia Android yang ternyata menyenangkan. 
-                          Yang nomor satu, RuangCoding mengajarkan ilmu berorientasi kerja. Kini saya sangat terbantu dalam karir saya.”</p>  
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-2"></div>
-
-      <div class="col-lg-5">
-        <div class="naccs">
-          <div class="grid">
-            <ul class="nacc">
-              <li class="active">
-                <div>
-                  <div class="thumb">
-                    <div class="row">
-                      <div class="client-content">
-                        <img src="/images/quote.png" alt="">
-                        <p>“Saya khusus mendedikasikan waktu saya untuk belajar ngoding. 
-                          Di RuangCoding belajarnya step by step, library-nya up-to-date. Kalau ada eror, nggak bingung. 
-                          Di sini saya juga belajar untuk nggak asal coding aja. CV pun jadi bagus karena menambah skill pemrograman saya. 
-                          Saya jadi percaya diri untuk ngoding.”</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 {{-- pricing --}}
 <div id="pricing" class="pricing-tables">
   <div class="container">
@@ -224,14 +161,14 @@
       </div>
       <div class="col-lg-4">
         <div class="pricing-item-pro">
-          <span class="price">Rp250k</span>
-          <h4>GOLD</h4>
+          <span class="price">Rp100k</span>
+          <h4>SILVER</h4>
           <div class="icon">
             <img src="/images/orang3.png" alt="">
           </div>
           <ul>
-            <li>Akses materi 2 bulan</li>
-            <li>Bebas Iklan</li>
+            <li>Akses materi 1 bulan</li>
+            <li class="non-function">Bebas Iklan</li>
             <li class="non-function">Bebas Tanya Jawab</li>
             <li class="non-function">Pilihan Lainnya</li>
           </ul>
@@ -242,22 +179,23 @@
       </div>
       <div class="col-lg-4">
         <div class="pricing-item-regular">
-          <span class="price">Rp375k</span>
-          <h4>PLATINUM</h4>
+          <span class="price">Rp100k</span>
+          <h4>SILVER</h4>
           <div class="icon">
             <img src="/images/orang3.png" alt="">
           </div>
           <ul>
-            <li>Akses materi 3 bulan</li>
-            <li>Bebas Iklan</li>
-            <li>Bebas Tanya Jawab</li>
-            <li>Pilihan Lainnya</li>
+            <li>Akses materi 1 bulan</li>
+            <li class="non-function">Bebas Iklan</li>
+            <li class="non-function">Bebas Tanya Jawab</li>
+            <li class="non-function">Pilihan Lainnya</li>
           </ul>
           <div class="border-button">
             <a href="#">Berlangganan</a>
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </div> 

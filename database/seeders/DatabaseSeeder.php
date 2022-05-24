@@ -3,10 +3,12 @@
 namespace Database\Seeders;
 use App\Models\Plan;
 
+use App\Models\User;
 use App\Models\Video;
-use App\Models\Course;
 
+use App\Models\Course;
 use App\Models\Playlist;
+use App\Models\CoursePlan;
 use Illuminate\Database\Seeder;
 use Database\Seeders\PlaylistSeeder;
 
@@ -22,6 +24,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         Playlist::factory(10)->create();
+        User::factory(5)->create();
         Video::factory(5)->create();
         // seeder for Course
         Course::create([
