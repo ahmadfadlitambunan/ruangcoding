@@ -4,13 +4,18 @@ use App\Models\Plan;
 use App\Models\Course;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PlanController;
+use App\Http\Controllers\QuizController;
 use App\Http\Controllers\VideoController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\CourseController;  
 use App\Http\Controllers\PlaylistController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\DashboardPlanController;
+use App\Http\Controllers\DashboardUserController;
+use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\DashboardVideoController;
 use App\Http\Controllers\DashboardCourseController;
+use App\Http\Controllers\DashboardPlaylistController;
 use App\Http\Controllers\DashboardTransactionController;
 
 /*
@@ -51,17 +56,6 @@ Route::get('/dashboard/verifikasi-transaksi', [DashboardTransactionController::c
 
 Route::put('/dashboard/verifikasi-transaksi/{trans}', [DashboardTransactionController::class, 'verify']);
 
-// Route::get('/rencana-belajar', function(){
-//     return view('plans', [
-//         'plans' => Plan::all(),
-//         'courses' => Course::all()
-//     ]);
-// });
-
-// Route::get('/pembayaran', function(){
-//     return view('payment');
-// });
-
 Route::get('/paket-belajar', [TransactionController::class, 'showPlans']);
 Route::get('/paket-belajar/history', [TransactionController::class, 'showHistory']);
 Route::get('/paket-belajar/{plan_id}', [TransactionController::class, 'setUpTransaction']);
@@ -75,3 +69,6 @@ Route::resource('/dashboard/users', DashboardUserController::class);
 Route::get('/search', [SearchController::class, 'search']);
 
 Route::get('/upload-pay/{trans}/edit', [TransactionController::class, 'editPay']);
+
+Route::get('/quiz/{play}', [QuizController::class, 'index']);
+Route::get('/quiz/fetch-question', [QuizController::class, 'fetchQuiz']);

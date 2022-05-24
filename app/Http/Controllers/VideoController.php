@@ -61,7 +61,7 @@ class VideoController extends Controller
                                 <p>". $result->desc ."</p>
                             </div>
                                 <div class='border-button text-center mb-2'>
-                                <a href='quiz.html'>Mulai kuis</a>
+                                <a href='/quiz/'". $result->playlist->id ."' >Mulai kuis</a>
                             </div>
                         </div>
                     ",

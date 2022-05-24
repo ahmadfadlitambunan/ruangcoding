@@ -19,7 +19,7 @@
                   <p>{{ $mainVid->desc }}</p>
                 </div>
                 <div class="border-button text-center mb-2">
-                  <a href="quiz.html">Mulai kuis</a>
+                  <a href="/quiz/{{ $mainVid->playlist->id }}">Mulai kuis</a>
                 </div>
               </div>
             

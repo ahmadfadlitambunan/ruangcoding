@@ -2,15 +2,9 @@
 
 namespace Database\Seeders;
 use App\Models\Plan;
-<<<<<<< HEAD
-
-use App\Models\User;
-=======
 use App\Models\User;
 use App\Models\Admin;
->>>>>>> 42fcdb27c2ffea8d21f76d171eb2dc644d8f20de
 use App\Models\Video;
-
 use App\Models\Course;
 use App\Models\Playlist;
 use App\Models\CoursePlan;

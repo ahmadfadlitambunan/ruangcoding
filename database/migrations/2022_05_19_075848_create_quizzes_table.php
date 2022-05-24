@@ -17,9 +17,12 @@ class CreateQuizzesTable extends Migration
             $table->id();
             $table->foreignId('playlist_id');
             $table->string('name');
-            $table->enum('type', ['Multiple Choice', 'Short Answer']);
             $table->text('content');
-            $table->string('answer');
+            $table->text('answer');
+            $table->text('option1');
+            $table->text('option2');
+            $table->text('option3');
+            $table->text('option4');
             $table->enum('access_type', ['free', 'premium']);
             $table->timestamps();
         });
