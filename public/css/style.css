@@ -933,7 +933,7 @@ Banner Style
 }
 
 .main-banner .left-content p {
-  margin-bottom: 10px;
+  margin-bottom: 45px;
   color: #2a2a2a;
   font-weight: 400;
 }
@@ -1326,12 +1326,12 @@ The Clients
 */
 
 .pricing-tables {
-  padding-top: 0px;
+  padding-top: 130px;
 }
 
 .pricing-tables  .section-heading {
   text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 80px;
 }
 
 .pricing-tables  .section-heading p {

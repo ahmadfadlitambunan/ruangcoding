@@ -92,18 +92,18 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Manajemen Transaksi
+                Manajemen Materi Belajar
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link" href="/dashboard/transaksi">
-                    <i class="fa fa-bill" aria-hidden="true"></i>
-                    <span>Transaksi</span>
+                <a class="nav-link" href="../admin/buat-materi.html">
+                    <i class="fa fa-upload" aria-hidden="true"></i>
+                    <span>Buat Materi</span>
                 </a>
-                <a class="nav-link" href="/dashboard/verifikasi-transaksi">
+                <a class="nav-link" href="../admin/buat-kuis.html">
                     <i class="fa fa-pencil" aria-hidden="true"></i>
-                    <span>Menunggu Verifikasi</span>
+                    <span>Buat Kuis</span>
                 </a>
             </li>
 

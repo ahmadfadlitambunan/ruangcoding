@@ -22,8 +22,7 @@
               <div class="col-lg-5 mb-3">
                 <div class="left-content show-up header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
                   <div class="card mb-2" style="max-width: 580px;">
-                    {{-- <a href="/belajar/{{ $playlist->course->id }}/{{ $playlist->id }}">   --}}
-                    <a href="{{ url()->current() . '/' . $playlist->id }}">  
+                    <a href="/belajar/{{ $playlist->course->id }}/{{ $playlist->id }}">  
                       <div class="row g-0">
                         <div class="col-md-4">
                           <img src="https://source.unsplash.com/1280x720?Python-Programming" class="rounded-start img-fluid" alt="https://source.unsplash.com/1280x720?Python" width="10px">

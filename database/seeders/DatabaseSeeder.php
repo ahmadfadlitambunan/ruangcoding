@@ -2,18 +2,11 @@
 
 namespace Database\Seeders;
 use App\Models\Plan;
-<<<<<<< HEAD
-
-use App\Models\User;
-=======
 use App\Models\User;
 use App\Models\Admin;
->>>>>>> 42fcdb27c2ffea8d21f76d171eb2dc644d8f20de
 use App\Models\Video;
-
 use App\Models\Course;
 use App\Models\Playlist;
-use App\Models\CoursePlan;
 use Illuminate\Database\Seeder;
 use Database\Seeders\PlaylistSeeder;
 
@@ -29,7 +22,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         Playlist::factory(10)->create();
-        User::factory(5)->create();
         Video::factory(5)->create();
         // seeder for Course
         Course::create([
@@ -99,31 +91,6 @@ class DatabaseSeeder extends Seeder
             'name' => "Data Science",
             'price' => 200000,
             'duration' => '1 year'
-        ]);
-
-        //seeder user
-        User::create([
-            'name' => "Nadya",
-            'email' => 'nadya@gmail.com',
-            'no_phone' => '085211111111',
-            'password'=>bcrypt('12345678'),
-            'gender' => 'female'
-        ]);
-
-        User::create([
-            'name' => "Joko",
-            'email' => 'joko@gmail.com',
-            'no_phone' => '08123456789',
-            'password'=>bcrypt('abcdefghij'),
-            'gender' => 'male'
-        ]);
-
-        User::create([
-            'name' => "Jay",
-            'email' => 'jay@gmail.com',
-            'no_phone' => '08987654321',
-            'password'=>bcrypt('testestes'),
-            'gender' => 'male'
         ]);
 
         //seeder admin
