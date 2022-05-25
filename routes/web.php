@@ -7,7 +7,7 @@ use App\Http\Controllers\PlanController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\SearchController;
-use App\Http\Controllers\CourseController;  
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\PlaylistController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\DashboardPlanController;
@@ -18,6 +18,8 @@ use App\Http\Controllers\DashboardVideoController;
 use App\Http\Controllers\DashboardCourseController;
 use App\Http\Controllers\DashboardPlaylistController;
 use App\Http\Controllers\DashboardTransactionController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,7 +44,7 @@ Route::get('/belajar/{id}', [PlaylistController::class, 'index']);
 Route::get('/belajar/{course_id}/{playlist_id}', [VideoController::class, 'index'])->name('playlist.videos');
 Route::get('/belajar/{course_id}/{playlist_id}/{video_id}', [VideoController::class, 'show'])->name('video');
 
-Route::get('/dashboard', function(){
+Route::get('/dashboard', function () {
     return view('dashboard.index');
 });
 
@@ -75,3 +77,10 @@ Route::get('/search', [SearchController::class, 'search']);
 Route::get('/upload-pay/{trans}/edit', [TransactionController::class, 'editPay']);
 
 Route::get('/quiz/{play}', [QuizController::class, 'index']);
+
+Route::get('/login', [LoginController::class, 'index'])->middleware('guest');
+Route::get('/register', [RegisterController::class, 'index']);
+
+Route::post('/register', [RegisterController::class, 'store']);
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout']);

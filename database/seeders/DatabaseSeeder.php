@@ -1,6 +1,7 @@
 <?php
 
 namespace Database\Seeders;
+
 use App\Models\Plan;
 use App\Models\User;
 use App\Models\Admin;
@@ -97,15 +98,41 @@ class DatabaseSeeder extends Seeder
         Admin::create([
             'email' => 'barbie@gmail.com',
             'name' => "Barbie",
-            'password'=>bcrypt('12345678')
+            'password' => bcrypt('12345678')
         ]);
 
         Admin::create([
             'email' => 'nadin@gmail.com',
             'name' => "Nadin",
-            'password'=>bcrypt('pass12345')
+            'password' => bcrypt('pass12345')
         ]);
-        
+
+        // seeder for user
+
+        User::create([
+            'name' => 'Ahmad Fadli Tambunan',
+            'email' => 'Fadli@usu.ac.id',
+            'no_phone' => '081265230266',
+            'password' => bcrypt('rahasia'),
+            'gender' => 'male'
+        ]);
+
+        User::create([
+            'name' => 'Muhammad Azis Saputra',
+            'email' => 'Azis@usu.ac.id',
+            'no_phone' => '081263181038',
+            'password' => bcrypt('terbuang'),
+            'gender' => 'male'
+        ]);
+
+        User::create([
+            'name' => 'Imam Hatris Ekaputra',
+            'email' => 'Imam@usu.ac.id',
+            'no_phone' => '081260900289',
+            'password' => bcrypt('mantaneh'),
+            'gender' => 'male'
+        ]);
+
         // CoursePlan::create([
         //     'plan_id' => 1,
         //     'course_id' => 1
