@@ -18,6 +18,9 @@ class DashboardPlanController extends Controller
         return view('dashboard.plans.index', [
             'plans' => Plan::all()
         ]);
+        /*
+            SELECT * FROM `plans`;
+        */
     }
 
     /**
@@ -30,6 +33,9 @@ class DashboardPlanController extends Controller
         return view('dashboard.plans.create', [
             'courses' => Course::all()
         ]);
+        /*
+            SELECT * FROM `courses`
+        */
     }
 
     /**
@@ -52,11 +58,24 @@ class DashboardPlanController extends Controller
         $request['duration'] = $request['durationMany'] . " ". $request['durationInform'] ;
         $result = Plan::create($request->except('courses', 'durationMany', 'durationInform'));
 
+        /*
+            INSERT INTO `plans` (`name`, `DESC`, `price`, `duration`) VALUES (
+                                $request->name, 
+                                $request->desc, 
+                                $request->price, 
+                                $request->duration         
+                        );
+        */
+
         foreach($request->courses as $course_id) :
             \DB::table('course_plan')->insert([
                 'plan_id' => $result->id,
                 'course_id' => $course_id,
             ]);
+
+            /*
+                INSERT INTO `course_plan` (`plan_id`, `course_id`) VALUES ($result->id, $course->id);
+            */
         endforeach;
         
         return redirect('/dashboard/plans')->with('success', "Rencana Baru Telah Ditambahkan");
@@ -70,6 +89,9 @@ class DashboardPlanController extends Controller
      */
     public function show(Plan $plan)
     {
+        /*
+            SELECT * FROM `plans` WHERE `id` = $plan->id LIMIT 1
+        */
         return view('dashboard.plans.show', [
             'plan' => $plan
         ]);
@@ -90,6 +112,10 @@ class DashboardPlanController extends Controller
             'durationMany' => $explode[0],
             'durationInform' => $explode[1],
         ]);
+        /*
+            SELECT * FROM `plans` WHERE `id` = $plan->id LIMIT 1
+            SELECT * FROM `courses`
+        */
     }
 
     /**
@@ -111,6 +137,14 @@ class DashboardPlanController extends Controller
 
         $request['duration'] = $request['durationMany'] . " ". $request['durationInform'] ;
         Plan::where('id', $plan->id)->update($request->except('courses', 'durationMany', 'durationInform', '_method', '_token'));
+        /*
+            UPDATE `plans` SET 
+                    `name` = $request->name, 
+                    `DESC` = $request->desc, 
+                    `price` = $request->price, 
+                    `duration` = $request->duration,, 
+                WHERE `id` = $plan->id
+        */
 
         \DB::table('course_plan')->where('plan_id', $plan->id)->delete();
         foreach($request->courses as $course_id) :
@@ -133,5 +167,9 @@ class DashboardPlanController extends Controller
     {
         Plan::destroy($plan->id);
         return redirect('/dashboard/plans')->with('success', "Rencana Telah Berhasil Dihapus");
+        /*
+            SELECT * FROM `plans` WHERE `id` = $plan->id LIMIT 1
+            DELETE FROM `plans` WHERE `id` = $plan->id
+        */
     }
 }

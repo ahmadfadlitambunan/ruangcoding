@@ -20,7 +20,7 @@ class Playlist extends Model
 
     public function videos()
     {
-        return $this->hasMany(Course::class);
+        return $this->hasMany(Video::class);
     }
 
     public function quizzes()

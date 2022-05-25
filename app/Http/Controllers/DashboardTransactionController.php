@@ -47,12 +47,8 @@ class DashboardTransactionController extends Controller
                     'status' => 'active'
                 ]);
 
-                return "ok";
+                return redirect('/dashboard/transaksi')->with('success', "Transaksi telah berhasil di update");
             }
-
-            return "o";
-        } else {
-            return "KO";
-        }
     }
+}
 }

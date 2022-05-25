@@ -12,6 +12,11 @@ class QuizController extends Controller
     {
         
         $results = $play->quizzes;  
+         /*
+            SELECT * FROM `playlists` WHERE `id` = $id;
+            SELECT * FROM `quizzes` WHERE `playlist_id` = $id; 
+        */
+
         // return $results; 
         $results->toJson();
         return view('quiz', [

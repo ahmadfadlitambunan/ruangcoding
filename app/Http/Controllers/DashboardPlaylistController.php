@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Playlist;
+use App\Models\Course;
 use Illuminate\Http\Request;
 
 class DashboardPlaylistController extends Controller
@@ -27,7 +28,8 @@ class DashboardPlaylistController extends Controller
     public function create()
     {
         return view('dashboard.playlists.create', [
-            'playlists' => Playlist::all()
+            'playlists' => Playlist::all(),
+            'courses' => Course::all()
         ]);
     }
 
@@ -74,7 +76,7 @@ class DashboardPlaylistController extends Controller
     {
         return view('dashboard.playlists.edit', [
             'playlist' => $playlist,
-            'playlists' => Playlist::all(),
+            'courses' => Course::all(),
         ]);
     }
 

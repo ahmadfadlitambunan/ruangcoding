@@ -27,13 +27,18 @@
                         <trix-editor input="desc"></trix-editor>
                     </div>
                     <div class="form-group">
-                        <label for="course_id">Kelas</label>
-                        <input type="int" class="form-control @error('course_id') is-invalid @enderror" id="course_id" name="course_id" placeholder="Pilihan Kelas" value="{{ old('course_id') }}">
+                        <select class="form-select @error('course_id') is-invalid @enderror" name="course_id" id="course" onchange="updatePlaylist()" required>
+                            <option value="" selected required>Pilih Kelas</option>
+                            @foreach ($courses as $course)
+                                <option value="{{ $course->id }}">{{ $course->name }}</option>
+                            @endforeach
+                        </select>
                         @error('course_id')
-                          <div class="invalid-feedback">
-                          {{ $message }}
-                          </div>
+                            <div class="invalid-feedback">
+                            {{ $message }}
+                            </div>
                         @enderror
+                    </div>
                       </div>
                     {{-- <div class="card">
                         <div class="card-body">
