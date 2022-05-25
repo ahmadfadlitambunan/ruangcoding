@@ -26,6 +26,23 @@ class CreateQuizzesTable extends Migration
             $table->enum('access_type', ['free', 'premium']);
             $table->timestamps();
         });
+
+        /*
+        CREATE TABLE `quizzes` (
+            `id` bigint(20) UNSIGNED NOT NULL,
+            `playlist_id` bigint(20) UNSIGNED NOT NULL,
+            `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+            `question` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+            `answer` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+            `option1` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+            `option2` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+            `option3` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+            `option4` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+            `access_type` enum('free','premium') COLLATE utf8mb4_unicode_ci NOT NULL,
+            `created_at` timestamp NULL DEFAULT NULL,
+            `updated_at` timestamp NULL DEFAULT NULL
+            )
+        */
     }
 
     /**

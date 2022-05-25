@@ -22,6 +22,9 @@ class PlanController extends Controller
     {   
         $id = $request->id;
         $result = Plan::find($id)->courses;
+        /*
+            SELECT * FROM `plans` WHERE `id` = $id; 
+        */
 
         return view('ajaxpage', [
             'courses' => $result

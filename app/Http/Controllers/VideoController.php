@@ -47,6 +47,10 @@ class VideoController extends Controller
 
         $result = Video::find($video_id[4]);
 
+        /*
+            SELECT * FROM `videos` WHERE `id` = $video_id[4];
+        */
+
         // return view('ajaxvideo', [
         //     'video' => $result
         // ]);

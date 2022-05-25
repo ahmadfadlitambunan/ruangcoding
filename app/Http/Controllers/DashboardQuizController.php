@@ -20,6 +20,8 @@ class DashboardQuizController extends Controller
         return view('dashboard.quizzes.index', [
             'quizzes' => Quiz::all()
         ]);
+
+        //SELECT * FROM quizzes;
     }
 
     /**
@@ -66,6 +68,10 @@ class DashboardQuizController extends Controller
         }
 
         Quiz::create($validated);
+        /*
+            INSERT INTO `quizzes` (`name`, `question`, `access_type`, `playlist_id`, `option1`, `option2`, `option3`, `option4`, `answer`, `updated_at`, `created_at`) VALUES (
+                $validated->name, $validated->question, $validated->access_type, $validated->playlist_id, $validated->option1, $validated->option2, $validated->option3, $validated->option4, $validated->answer, now(), now())
+        */
 
         return redirect("/dashboard/quizzes")->with('success', "Kuis baru telah ditambahkan");
     }
@@ -81,6 +87,8 @@ class DashboardQuizController extends Controller
         return view('dashboard.quizzes.show', [
             'quiz' => $quiz
         ]);
+
+        // SELECT * FROM `quizzes` WHERE `id` = '$quiz->id' LIMIT 1
     }
 
     /**
@@ -140,7 +148,18 @@ class DashboardQuizController extends Controller
             'option4' => $validated['option4'],
             'access_type' => $validated['access_type']
         ]);
-
+        /*
+        UPDATE `quizzes` SET 
+            'name' => $validated['name'],
+            'playlist_id' => $validated['playlist_id'],
+            'question' => $validated['question'],
+            'answer' => $validated['answer'],
+            'option1' => $validated['option1'],
+            'option2' => $validated['option2'],
+            'option3' => $validated['option3'],
+            'option4' => $validated['option4'],
+            'access_type' => $validated['access_type'] WHERE `id` = $quiz_id
+        */
         return redirect("/dashboard/quizzes")->with('success', "Kuis telah sukses diubah");
     }
 
@@ -154,6 +173,8 @@ class DashboardQuizController extends Controller
     {
         Quiz::destroy($quiz->id);
         return redirect('/dashboard/quizzes')->with('success', "Quiz Telah Berhasil Dihapus");
+
+        // DELETE FROM `playlist` WHERE id = $quiz->id
     }
 
     public function fetchPlaylist($request)
@@ -162,4 +183,8 @@ class DashboardQuizController extends Controller
 
         return response()->json($result);
     }
+
+    /**
+     * SELECT * FROM `playlists` WHERE `course_id` = $request
+     */
 }

@@ -16,13 +16,28 @@ class CreateTransactionsTable extends Migration
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
             $table->foreignId('plan_id');
-            $table->foreignId('admin_id');
-            $table->foreignId('method_payment_id');
+            $table->foreignId('admin_id')->nullable();
+            $table->foreignId('method_pay_id');
             $table->enum('paid_status', ['success', 'failed'])->nullable();
-            $table->string('proof_of_payment');
+            $table->string('proof_of_payment')->nullable();
             $table->timestamp('paid_at')->nullable();
             $table->timestamps();
         });
+
+        /*
+            CREATE TABLE `transactions` (
+                `id` bigint(20) UNSIGNED NOT NULL,
+                `user_id` bigint(20) UNSIGNED NOT NULL,
+                `plan_id` bigint(20) UNSIGNED NOT NULL,
+                `admin_id` bigint(20) UNSIGNED DEFAULT NULL,
+                `method_pay_id` bigint(20) UNSIGNED NOT NULL,
+                `paid_status` enum('success','failed') COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                `proof_of_payment` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                `paid_at` timestamp NULL DEFAULT NULL,
+                `created_at` timestamp NULL DEFAULT NULL,
+                `updated_at` timestamp NULL DEFAULT NULL
+                )
+        */
     }
 
     // Query untuk membuat tabel transactions

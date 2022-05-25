@@ -20,6 +20,16 @@ class CreateCoursesTable extends Migration
             $table->string('image')->nullable();
             $table->timestamps();
         });
+
+        /*
+            CREATE TABLE `courses` (
+                `id` bigint(20) UNSIGNED NOT NULL,
+                `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                `desc` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                `created_at` timestamp NULL DEFAULT NULL,
+                `updated_at` timestamp NULL DEFAULT NULL)
+        */
     }
 
     /**

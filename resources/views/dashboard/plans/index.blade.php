@@ -51,6 +51,10 @@
                                      </td>
                                  </tr>
                                 @endforeach
+                                {{-- 
+                                    SELECT * FROM `plans`  
+                                --}}
+
                             </tbody>
                         </table>
                     </div>
