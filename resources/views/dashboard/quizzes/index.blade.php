@@ -13,8 +13,8 @@
             @endif
             <div class="card shadow mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center">
-                    <h6 class="mr-auto font-weight-bold text-primary">Daftar Video</h6>
-                    <a href="/dashboard/videos/create" class="btn btn-primary mx-2">Tambah Video Baru</a>
+                    <h6 class="mr-auto font-weight-bold text-primary">Daftar Quiz</h6>
+                    <a href="/dashboard/quizzes/create" class="btn btn-primary mx-2">Tambah Quiz Baru</a>
                     <form method="GET" onsubmit="return confirm ('Download Pdf Daftar Posting?')" action="pdf.php?pdf=2">
                         <button type='submit' name='btnpost'class='btn btn-outline-primary'>Report</button>
                     </form>
@@ -25,21 +25,23 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Judul</th>
+                                    <th>Pertanyaan</th>
                                     <th>Playlist</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($videos as $video)      
+                                @foreach ($quizzes as $quiz)      
                                 <tr>
                                      <td>{{ $loop->iteration }}</td>
-                                     <td>{{ $video->title }}</td>
-                                     <td>{{ $video->playlist->name }}</td>
+                                     <td>{{ $quiz->name }}</td>
+                                     <td>{{ $quiz->playlist->name}}</td>
                                      <td >
-                                        <a href="/dashboard/videos/{{ $video->id }}" class="btn btn-sm btn-success"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                        <a href="/dashboard/videos/{{ $video->id }}/edit" class="btn btn-sm btn-warning"><i class="fa fa-edit" aria-hidden="true"></i></a>
-                                        <form action="/dashboard/videos/{{ $video->id }}" method="POST" class="d-inline">
+                                         <a href="/dashboard/quizzes/{{ $quiz->id }}" class="btn btn-sm btn-success"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                
+                                        <a href="/dashboard/quizzes/{{ $quiz->id }}/edit" class="btn btn-sm btn-warning"><i class="fa fa-edit" aria-hidden="true"></i></a>
+                                
+                                        <form action="/dashboard/quizzes/{{ $quiz->id }}" method="POST" class="d-inline">
                                         @method('delete')
                                         @csrf
                                         <button class="btn btn-sm btn-danger" onclick="return confirm('Apakah anda yakin?')"><i class="fa fa-trash" aria-hidden="true"></i></button>
@@ -58,14 +60,4 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+    

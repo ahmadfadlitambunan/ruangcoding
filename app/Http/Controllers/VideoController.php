@@ -56,12 +56,12 @@ class VideoController extends Controller
             'html'=> "
                         <div class='main-video' id='main-video'>
                             <div class='video'>
-                                <video src='/video/".$result->file_name."' controls autoplay></video>
+                                <video src='" . asset('storage/' . $result->file_name)."' controls autoplay></video>
                                 <h3 class='title'>". $result->title ."</h3>
                                 <p>". $result->desc ."</p>
                             </div>
                                 <div class='border-button text-center mb-2'>
-                                <a href='quiz.html'>Mulai kuis</a>
+                                <a href='/quiz/'". $result->playlist->id ."' >Mulai kuis</a>
                             </div>
                         </div>
                     ",

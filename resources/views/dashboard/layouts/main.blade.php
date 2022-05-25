@@ -19,15 +19,21 @@
 
     <!-- Custom styles for this template-->
     <link href="/css/sb-admin-2.css" rel="stylesheet">
+    
 
     <!-- Bar Icon -->
     <link rel="shortcut icon" href="/images/logo5.png" type="image/x-icon">
 
     <!-- data tables -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="/css/trix.css">
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
 
     {{-- TRIX EDITOR --}}
-    <link rel="stylesheet" type="text/css" href="/css/trix.css">
     <script type="text/javascript" src="/js/trix.js"></script>
     
     <!-- CDN Font Awesome -->
@@ -65,9 +71,7 @@
         </div>
     </div>
 
-        <!-- Bootstrap core JavaScript-->
-        <script src="/vendor/jquery/jquery.min.js"></script>
-        <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
 
         <!-- Core plugin JavaScript-->
         <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>

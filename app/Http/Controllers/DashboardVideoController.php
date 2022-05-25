@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Video;
+use App\Models\Course;
 use Illuminate\Http\Request;
 
 class DashboardVideoController extends Controller
@@ -14,7 +15,9 @@ class DashboardVideoController extends Controller
      */
     public function index()
     {
-        return view('dashboard.videos.index');
+        return view('dashboard.videos.index', [
+            'videos' => Video::all()
+        ]);
     }
 
     /**
@@ -24,7 +27,9 @@ class DashboardVideoController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.videos.create', [
+            'courses' => Course::all()
+        ]);
     }
 
     /**
@@ -35,7 +40,26 @@ class DashboardVideoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'title' => 'required|max:255',
+            'desc' => 'required',
+            'access_type' => 'required',
+            'playlist_id' => 'required',
+            'thumb_img' => 'image|file|max:1024',
+            'file_name' => 'required|mimes:mp4,ogx,oga,ogv,ogg,webm'
+        ]);
+
+        if($request->file('thumb_img')) {
+            $validated['thumb_img'] = $request->file('thumb_img')->store('thumb-img');
+        }
+        if($request->file('file_name')) {
+            $validated['file_name'] = $request->file('file_name')->store('vidio-belajar');
+        }
+
+        Video::create($validated);
+
+        return redirect('/dashboard/videos')->with('success', "Video berhasil ditambahkan");
+        
     }
 
     /**
@@ -46,7 +70,9 @@ class DashboardVideoController extends Controller
      */
     public function show(Video $video)
     {
-        //
+        return view('dashboard.videos.show', [
+            'video' => $video
+        ]);
     }
 
     /**
@@ -57,7 +83,10 @@ class DashboardVideoController extends Controller
      */
     public function edit(Video $video)
     {
-        //
+        return view('dashboard.videos.edit', [
+            'video' => $video,
+            'courses' => Course::all()
+        ]); 
     }
 
     /**
@@ -80,6 +109,7 @@ class DashboardVideoController extends Controller
      */
     public function destroy(Video $video)
     {
-        //
+        Video::destroy($video->id);
+        return redirect('/dashboard/videos')->with('success', "VideoTelah Berhasil Dihapus");
     }
 }

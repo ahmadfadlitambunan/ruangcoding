@@ -43,7 +43,7 @@ class DashboardCourseController extends Controller
         $validatedData = $request->validate([
             'name' => 'required|max:255|unique:courses',
             'desc' => 'required',
-            'image' => 'image|file|max:2000'
+            'image' => 'required|image|file|max:2000'
         ]);
         
         if($request->file('image')) {
