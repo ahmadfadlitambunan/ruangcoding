@@ -6,6 +6,7 @@
 <br>
 <br>
 <br>
+<br>
 <div class="row justify-content-center">
     <div class="col-md-4">
         @if (session()->has('success'))

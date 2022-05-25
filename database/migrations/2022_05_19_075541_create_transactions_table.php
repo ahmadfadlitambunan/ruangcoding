@@ -25,6 +25,20 @@ class CreateTransactionsTable extends Migration
         });
     }
 
+    // Query untuk membuat tabel transactions
+
+    //  CREATE TABLE transactions(
+    //      id INT AUTO_INCREMENT PRIMARY_KEY,
+    //      plan_id INT FOREIGN_KEY,
+    //      admin_id INT FOREIGN_KEY,
+    //      method_payment_id INT FOREIGN_KEY,
+    //      paid_status enum('success', 'failed'),
+    //      proof_of_payment VARCHAR(255),
+    //      paid_at timestamp
+    //      created_at timestamp NULL DEFAULT NULL,
+    //      updated_at timestamp NULL DEFAULT NULL
+    // // );
+
     /**
      * Reverse the migrations.
      *

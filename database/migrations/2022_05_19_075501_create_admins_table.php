@@ -22,6 +22,17 @@ class CreateAdminsTable extends Migration
         });
     }
 
+    // Query untuk membuat tabel  login
+
+    //  CREATE TABLE admins(
+    //       id INT AUTO_INCREMENT PRIMARY_KEY,
+    //       email VARCHAR(255) NOT NULL,
+    //       name VARCHAR(255) NOT NULL,
+    //       password VARCHAR(255) NOT NULL,
+    //       created_at timestamp NULL DEFAULT NULL,
+    //       updated_at timestamp NULL DEFAULT NULL
+    // );
+
     /**
      * Reverse the migrations.
      *

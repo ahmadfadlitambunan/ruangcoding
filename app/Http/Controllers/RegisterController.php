@@ -32,10 +32,9 @@ class RegisterController extends Controller
         // Cara Pertama untuk menapilkan pesan sudah login
 
         // $request->session()->flash('success', 'Registration Successfull! Please Login');
-
-
-
         // Cara Kedua untuk menampilkan pesan sudah login
+
+
 
         return redirect('/login')->with('success', 'Registration Successfull! Please Login');
     }

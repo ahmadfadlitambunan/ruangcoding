@@ -26,6 +26,20 @@ class CreateUsersTable extends Migration
         });
     }
 
+    // Query untuk membuat tabel  login
+
+    // // CREATE TABLE users(
+    // //     id INT AUTO_INCREMENT PRIMARY_KEY,
+    //         name VARCHAR(255) NOT NULL,
+    //         email VARCHAR(255) NOT NULL,
+    //         no_phone VARCHAR(255) NOT_NULL,
+    //         email_verified_at TIMESTAMP DEFAULT NULL,
+    //         password VARCHAR(255) NOT NULL,
+    //         gender (enum('male', 'female')),
+    //         remember_token VARCHAR(100) DEFAULT NULL
+
+    // // );
+
     /**
      * Reverse the migrations.
      *

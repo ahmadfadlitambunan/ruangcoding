@@ -21,6 +21,18 @@ class CreateMethodPaysTable extends Migration
         });
     }
 
+    // Query untuk membuat tabel method_pays
+
+    //  CREATE TABLE transactions(
+    //      id INT AUTO_INCREMENT PRIMARY_KEY NOT NULL,
+    //      name VARCHAR(255) NOT NULL,
+    //      no_account VARCHAR(255) NOT NULL
+    //      created_at TIMESTAMP NULL DEFAULT NULL
+    //      updated_at TIMESTAMP NULL DEFAULT NULL
+    //  );
+
+
+
     /**
      * Reverse the migrations.
      *
