@@ -14,7 +14,7 @@
             
               <div class="main-video" id="main-video">
                 <div class="video">
-                  <video src="/video/{{ $mainVid->file_name }}" controls autoplay></video>
+                  <video src="{{ asset('storage/'.$mainVid->file_name) }}" controls autoplay></video>
                   <h3 class="title">{{ $mainVid->title }}</h3>
                   <p>{{ $mainVid->desc }}</p>
                 </div>

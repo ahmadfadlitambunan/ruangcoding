@@ -29,8 +29,6 @@ class DashboardTransactionController extends Controller
     public function verify(Request $request, Transaction $trans)
     {
         
-        
-        
         if($request && $request->status === "pass"){
             $result = $trans->update([
                 'paid_status' => 'success',

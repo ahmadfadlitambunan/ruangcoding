@@ -14,6 +14,11 @@
     <link rel="stylesheet" href="/css/quiz.css">
 
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+        
+        const questions = JSON.parse(JSON.stringify({!! $quizzes !!}));
+        console.log(questions)
+    </script>
 </head>
 <body>
     <!-- start Quiz button -->
@@ -79,7 +84,7 @@
     </div>
 
     {{-- Fetch From Database User Ajax --}}
-    <script>
+    {{-- <script>
         $(document).ready(function(){
             fetchQuestion();
 
@@ -87,16 +92,18 @@
             {
                 $.ajax({
                     type: "GET",
-                    url: "{{ url('') }}/quiz/fetch-question",
-                    data: "id=" + {{ $playlist_id }},
+                    url: "{{ url('') }}/fetch-question",
+                    data: "id=" +  ,
                     success: function(data){
-                        console.log(data);
+                        let questions = data
+                        questions = questions.replace(/&quot;/g, '\\"');
+                        console.log(questions)
                     }
 
                 });
             }
         });
-    </script>
+    </script> --}}
 
     <!-- Inside this JavaScript file I've inserted Questions and Options only -->
     <script src="/js/questions.js"></script>

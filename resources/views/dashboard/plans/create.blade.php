@@ -40,12 +40,12 @@
                     <div class="form-group mt-3">
                         <label for="price">Harga</label>
                         <input type="Number" class="form-control @error('price') is-invalid @enderror" id="price" name="price" placeholder="Harga Rencana Belajar" value="{{ old('price') }}">
+                        @error('price')
+                            <div class="invalid-feedback">
+                            {{ $message }}
+                            </div>
+                        @enderror
                     </div>
-                    @error('price')
-                        <div class="invalid-feedback">
-                        {{ $message }}
-                        </div>
-                    @enderror
                     <div class="card">
                         <div class="card-body">
                             <div class="form-group">

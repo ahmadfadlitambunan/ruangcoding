@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Quiz;
 use App\Models\Course;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -20,5 +21,10 @@ class Playlist extends Model
     public function videos()
     {
         return $this->hasMany(Course::class);
+    }
+
+    public function quizzes()
+    {
+        return $this->hasMany(Quiz::class);
     }
 }

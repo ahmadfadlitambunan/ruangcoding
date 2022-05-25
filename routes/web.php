@@ -11,6 +11,7 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\PlaylistController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\DashboardPlanController;
+use App\Http\Controllers\DashboardQuizController;
 use App\Http\Controllers\DashboardUserController;
 use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\DashboardVideoController;
@@ -48,8 +49,11 @@ Route::get('/dashboard', function(){
 Route::resource('/dashboard/plans', DashboardPlanController::class);
 Route::resource('/dashboard/courses', DashboardCourseController::class);
 Route::resource('/dashboard/playlists', DashboardPlaylistController::class);
-
 Route::resource('/dashboard/videos', DashboardVideoController::class);
+Route::resource('/dashboard/quizzes', DashboardQuizController::class);
+
+// ajax for quizzes create
+Route::get('/playlist-fetch/{course_id}', [DashboardQuizController::class, 'fetchPlaylist']);
 
 Route::get('/dashboard/transaksi', [DashboardTransactionController::class, 'index']);
 Route::get('/dashboard/verifikasi-transaksi', [DashboardTransactionController::class, 'needverif']);
@@ -71,4 +75,5 @@ Route::get('/search', [SearchController::class, 'search']);
 Route::get('/upload-pay/{trans}/edit', [TransactionController::class, 'editPay']);
 
 Route::get('/quiz/{play}', [QuizController::class, 'index']);
-Route::get('/quiz/fetch-question', [QuizController::class, 'fetchQuiz']);
+
+
