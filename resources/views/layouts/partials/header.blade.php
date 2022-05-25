@@ -52,8 +52,8 @@
             </li>
             @else
             <li>
-              <div class="gradient-button"><a id="modal_trigger" href="/register"><i class="fa fa-sign-in-alt"></i>
-                  Daftar</a></div>
+              <div class="gradient-button"><a id="modal_trigger" href="/login"><i class="fa fa-sign-in-alt"></i>
+                  Masuk</a></div>
             </li>
             @endauth
           </ul>
