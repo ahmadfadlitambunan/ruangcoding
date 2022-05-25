@@ -36,7 +36,7 @@
               </li>
               
               <li class="scroll-to-section"><a href="/belajar">Belajar</a></li>
-              <li><div class="gradient-button"><a id="modal_trigger" href=""><i class="fa fa-sign-in-alt"></i> Masuk</a></div></li> 
+              <li><div class="gradient-button"><a id="modal_trigger" href="/login"><i class="fa fa-sign-in-alt"></i> Masuk</a></div></li> 
             </ul>        
             <a class='menu-trigger'>
                 <span>Menu</span>

@@ -60,13 +60,15 @@
                             @csrf
                             <label for="methodPayment" class="form-label @error('method_pay_id') is-invalid @enderror"><p class="fs-5 fw-bold ">Metode Pembayaran: </p></label>
                             <select class="form-select" id="methodPayment" name="method_pay_id">
+                              <option selected>Metode Pembayaran
+                              </option>
                               @foreach ($methodPays as $methodPay)
                               <option value="{{ $methodPay->id }}">{{ $methodPay->name }}</option>
                               @endforeach
                             </select>
                             <input type="hidden" name="plan_id" value="{{ $plan->id }}">
                             {{-- Perlu auth user id --}}
-                            <input type="hidden" name="user_id" value="{{ mt_rand(1, 5) }}">
+                            <input type="hidden" name="user_id" value="{{ Auth::user()->id}}">
 
                             <div class="d-grid gap-2 col-12 mx-auto">
                               <button class="btn mt-3 btn-block" type="submit" onclick="return confirm('Silahkan cek kembali detail pesanan anda! Klik ok jika sudah!')">Lanjutkan Pembayaran</button>

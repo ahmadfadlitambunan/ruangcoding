@@ -18,6 +18,7 @@ class DashboardPlaylistController extends Controller
         return view('dashboard.playlists.index', [
             'playlists' => Playlist::all()
         ]);
+        //SELECT * FROM playlists;
     }
 
     /**
@@ -49,6 +50,14 @@ class DashboardPlaylistController extends Controller
 
         $validatedData['desc'] = strip_tags($request->desc);
         Playlist::create($validatedData);
+        /*
+            INSERT INTO `playlists` (`name`, `DESC`, `course_id`, `updated_at`, `created_at`) VALUES (
+                $validatedData->name,
+                $validatedData->desc,
+                $validatedData->course_id,
+                now(),
+                now());
+        */
 
         return redirect('/dashboard/playlists')->with('success', "Playlist Baru Telah Ditambahkan");
     }
@@ -64,6 +73,7 @@ class DashboardPlaylistController extends Controller
         return view('dashboard.playlists.show', [
             'playlist' => $playlist
         ]);
+        // SELECT * FROM playlist WHERE id = $playlist->id
     }
 
     /**
@@ -100,6 +110,15 @@ class DashboardPlaylistController extends Controller
         Playlist::where('id', $playlist->id)
             ->update($validatedData);
 
+         /*
+                UPDATE `playlists` SET 
+                    `name` = $validatedData-> name
+                    `DESC` = $validatedData->desc
+                    `course_id` = $validatedData->course_id 
+                    `playlists`.`updated_at` = now()
+                 WHERE `id` = $playlist_id;
+         */
+
         return redirect('/dashboard/playlists')->with('success', "Playlist Telah Diubah");
     }
 
@@ -113,5 +132,7 @@ class DashboardPlaylistController extends Controller
     {
         Playlist::destroy($playlist->id);
         return redirect('/dashboard/playlists')->with('success', "Kelas Telah Berhasil Dihapus");
+
+        // DELETE FROM `playlists` WHERE `id` = $playlist->id
     }
 }

@@ -23,6 +23,21 @@ class CreateVideosTable extends Migration
             $table->enum('access_type', ['free', 'premium']);
             $table->timestamps();
         });
+
+        /*
+            CREATE TABLE `videos` (
+                `id` bigint(20) UNSIGNED NOT NULL,
+                `playlist_id` bigint(20) UNSIGNED NOT NULL,
+                `file_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                `thumb_img` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                `desc` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                `access_type` enum('free','premium') COLLATE utf8mb4_unicode_ci NOT NULL,
+                `created_at` timestamp NULL DEFAULT NULL,
+                `updated_at` timestamp NULL DEFAULT NULL
+                PRIMARY KEY (`id`)
+                )
+        */
     }
 
     /**

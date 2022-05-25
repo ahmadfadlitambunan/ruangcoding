@@ -18,6 +18,9 @@ class DashboardCourseController extends Controller
         return view('dashboard.courses.index', [
             'courses' => Course::all()
         ]);
+        /*
+            SELECET * FORM courses;
+        */
     }
 
     /**
@@ -30,6 +33,9 @@ class DashboardCourseController extends Controller
         return view('dashboard.courses.create', [
             'courses' => Course::all()
         ]);
+         /*
+            SELECET * FORM courses;
+        */
     }
 
     /**
@@ -53,6 +59,14 @@ class DashboardCourseController extends Controller
         $validatedData['desc'] = strip_tags($request->desc);
         Course::create($validatedData);
 
+        /*
+        INSERT INTO `courses` (`name`, `DESC`, `image`) VALUES (
+                $validatedData->name,
+                $validatedData->desc,
+                $validatedData->image
+                )
+        */
+
         return redirect('/dashboard/courses')->with('success', "Kelas Baru Telah Ditambahkan");
     }
 
@@ -67,6 +81,9 @@ class DashboardCourseController extends Controller
         return view('dashboard.courses.show', [
             'course' => $course
         ]);
+        /*
+        SELECT * FROM `courses` WHERE `id` = int LIMIT 1
+        */
     }
 
     /**
@@ -115,6 +132,12 @@ class DashboardCourseController extends Controller
         Course::where('id', $course->id)
             ->update($validatedData);
 
+        /*
+            UPDATE `courses` SET 
+                `DESC` =  $validatedData->desc
+                `image` = $validatedData->image 
+                WHERE `id` = 7
+        */
         return redirect('/dashboard/courses')->with('success', "Kelas Telah Diubah");
     }
 

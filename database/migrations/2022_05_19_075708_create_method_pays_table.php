@@ -19,6 +19,16 @@ class CreateMethodPaysTable extends Migration
             $table->string('no_account');
             $table->timestamps();
         });
+
+        /*
+            CREATE TABLE `method_pays` (
+                    `id` bigint(20) UNSIGNED NOT NULL,
+                    `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                    `no_account` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+                    `created_at` timestamp NULL DEFAULT NULL,
+                    `updated_at` timestamp NULL DEFAULT NULL
+                )
+        */
     }
 
     /**

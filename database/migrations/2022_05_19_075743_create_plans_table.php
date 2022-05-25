@@ -21,6 +21,18 @@ class CreatePlansTable extends Migration
             $table->integer('price');
             $table->timestamps();
         });
+
+        /*
+            CREATE TABLE `plans` (
+            `id` bigint(20) UNSIGNED NOT NULL,
+            `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+            `desc` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+            `duration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+            `price` int(11) NOT NULL,
+            `created_at` timestamp NULL DEFAULT NULL,
+            `updated_at` timestamp NULL DEFAULT NULL
+            )
+        */
     }
 
     /**

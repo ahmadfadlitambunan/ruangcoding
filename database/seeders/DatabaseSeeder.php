@@ -8,6 +8,7 @@ use App\Models\Admin;
 use App\Models\Video;
 use App\Models\Course;
 use App\Models\Playlist;
+use App\Models\MethodPay;
 use Illuminate\Database\Seeder;
 use Database\Seeders\PlaylistSeeder;
 
@@ -131,6 +132,11 @@ class DatabaseSeeder extends Seeder
             'no_phone' => '081260900289',
             'password' => bcrypt('mantaneh'),
             'gender' => 'male'
+        ]);
+
+        MethodPay::create([
+            'name' => 'Gopay',
+            'no_account' => '081615135156'
         ]);
 
         // CoursePlan::create([

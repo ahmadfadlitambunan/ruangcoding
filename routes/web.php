@@ -41,8 +41,8 @@ Route::get('/ajax', [PlanController::class, 'ajax']);
 Route::get('/ajax-video', [VideoController::class, 'ajaxVideo']);
 
 Route::get('/belajar/{id}', [PlaylistController::class, 'index']);
-Route::get('/belajar/{course_id}/{playlist_id}', [VideoController::class, 'index'])->name('playlist.videos');
-Route::get('/belajar/{course_id}/{playlist_id}/{video_id}', [VideoController::class, 'show'])->name('video');
+Route::get('/belajar/{course_id}/{playlist_id}', [VideoController::class, 'index'])->name('playlist.videos')->middleware('isSubscriber');
+Route::get('/belajar/{course_id}/{playlist_id}/{video_id}', [VideoController::class, 'show'])->name('video')->middleware('isSubscriber');
 
 Route::get('/dashboard', function () {
     return view('dashboard.index');
@@ -63,7 +63,7 @@ Route::get('/dashboard/verifikasi-transaksi', [DashboardTransactionController::c
 Route::put('/dashboard/verifikasi-transaksi/{trans}', [DashboardTransactionController::class, 'verify']);
 
 Route::get('/paket-belajar', [TransactionController::class, 'showPlans']);
-Route::get('/paket-belajar/history', [TransactionController::class, 'showHistory']);
+Route::get('/paket-belajar/history', [TransactionController::class, 'showHistory'])->middleware('auth');
 Route::get('/paket-belajar/{plan_id}', [TransactionController::class, 'setUpTransaction']);
 
 Route::post('/buat-transaksi', [TransactionController::class, 'makeTransaction']);
