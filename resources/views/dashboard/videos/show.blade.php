@@ -11,9 +11,9 @@
                 <div class="col-12">
                     <p class="h3 mb-0 text-gray-800">Thumbnail   :</p>
                     @if ($video->thumb_img)
-                    <img src="{{ asset('storage/'. $video->thumb_img) }}" alt="{{ $video->title }}">
+                    <img src="{{ asset('storage/'. $video->thumb_img) }}" alt="{{ $video->title }} " width="200">
                     @else
-                    <img src="{{ asset('storage/'. $video->playlist->course->image) }}" alt="{{ $video->title }}">
+                    <img src="{{ asset('storage/'. $video->playlist->course->image) }}" alt="{{ $video->title }}" width="200">
                     @endif
                 </div>
                 <div class="col-4 ml-3">

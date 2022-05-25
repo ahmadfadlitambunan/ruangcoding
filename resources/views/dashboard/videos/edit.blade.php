@@ -72,11 +72,9 @@
 
                     <div class="form-group">
                         <label for="thumg_img">Gambar</label>
-                        @if ($video->thumb_img)
-                            
+                        @if ($video->thumb_img)     
                         <img src="{{ asset('storage/'.$video->thumb_img) }}" class="img-preview img-fluid mb-3 col-sm-4">
                         @else
-                            
                         <img class="img-preview img-fluid mb-3 col-sm-4">
                         @endif
                         <input type="file" class="form-control-file  @error('thumg_img') is-invalid @enderror" id="image" name="thumg_img" onchange="previewImage()">

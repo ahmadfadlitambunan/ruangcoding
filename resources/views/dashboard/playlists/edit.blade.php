@@ -12,7 +12,7 @@
                     @csrf
                     <div class="form-group">
                       <label for="name">Nama</label>
-                      <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" placeholder="Nama Kelas" value="{{ old('name'), $playlist->name }}">
+                      <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" placeholder="Nama Kelas" value="{{ old('name', $playlist->name) }}">
                       @error('name')
                         <div class="invalid-feedback">
                         {{ $message }}
@@ -24,17 +24,23 @@
                         @error('desc')
                             <p class="text-danger">{{ $message }}</p>
                         @enderror
-                        <input id="desc" type="hidden" name="desc" value="{{ old('desc'), $playlist->desc }}">
+                        <input id="desc" type="hidden" name="desc" value="{{ old('desc',  $playlist->desc )}}">
                         <trix-editor input="desc"></trix-editor>
                     </div>
                     <div class="form-group">
-                        <label for="course_id">Kelas</label>
-                        <input type="int" class="form-control @error('course_id') is-invalid @enderror" id="course_id" name="course_id" placeholder="Pilihan Kelas" value="{{ old('course_id'), $playlist->course_id }}">
-                        @error('course_id')
-                          <div class="invalid-feedback">
-                          {{ $message }}
-                          </div>
-                        @enderror
+                        <div class="col-xl-3">
+                            <select class="form-select @error('course_id') is-invalid @enderror" name="course_id" id="course" onchange="updatePlaylist()" required>
+                                <option value="" selected>Pilih Kelas</option>
+                                @foreach ($courses as $course)
+                                    <option value="{{ $course->id }}">{{ $course->name }}</option>
+                                @endforeach
+                            </select>
+                            @error('course_id')
+                              <div class="invalid-feedback">
+                              {{ $message }}
+                              </div>
+                            @enderror
+                        </div>
                       </div>
                     {{-- <div class="card">
                         <div class="card-body">

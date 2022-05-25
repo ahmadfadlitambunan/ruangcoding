@@ -5,7 +5,7 @@
         <div class="row">
           <div class="card" style="width: 12rem;">
             <div class="card-body">
-              <img class="card-img-top" src="/images/{{ $course->image }}">
+              <img class="card-img-top" src="{{ asset('storage/'. $course->image) }}">
               <h5>{{ $course->name }}</h5>
             </div>
           </div>

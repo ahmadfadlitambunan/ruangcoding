@@ -18,6 +18,9 @@ class DashboardVideoController extends Controller
         return view('dashboard.videos.index', [
             'videos' => Video::all()
         ]);
+        /*
+            SELECT * FROM `videos`
+        */
     }
 
     /**
@@ -30,6 +33,9 @@ class DashboardVideoController extends Controller
         return view('dashboard.videos.create', [
             'courses' => Course::all()
         ]);
+        /*
+            SELECT * FROM `courses`
+        */
     }
 
     /**
@@ -58,6 +64,15 @@ class DashboardVideoController extends Controller
 
         Video::create($validated);
 
+        /**
+         * INSERT INTO `videos` (`title`, `DESC`, `access_type`, `playlist_id`, `file_name`) VALUES (
+         *                  $request->title, 
+         *                  $request->desc, 
+         *                  $request->access_type, 
+         *                  $request->playlist_id,          
+         *                  $request->file_name);
+         */
+
         return redirect('/dashboard/videos')->with('success', "Video berhasil ditambahkan");
         
     }
@@ -73,6 +88,10 @@ class DashboardVideoController extends Controller
         return view('dashboard.videos.show', [
             'video' => $video
         ]);
+
+        /*
+            SELECT * FROM `videos` WHERE id = $video->id
+        */
     }
 
     /**
@@ -87,6 +106,12 @@ class DashboardVideoController extends Controller
             'video' => $video,
             'courses' => Course::all()
         ]); 
+
+        /**
+         * SELECT * FROM `videos` WHERE id = $video->id
+         * SELECT * FROM `courses
+         */
+
     }
 
     /**

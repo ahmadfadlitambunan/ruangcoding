@@ -16,4 +16,5 @@ class Video extends Model
     {
         return $this->belongsTo(Playlist::class);
     }
+
 }

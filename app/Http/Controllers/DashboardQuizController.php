@@ -162,4 +162,8 @@ class DashboardQuizController extends Controller
 
         return response()->json($result);
     }
+
+    /**
+     * SELECT * FROM `playlists` WHERE `course_id` = $request
+     */
 }

@@ -16,6 +16,11 @@ class TransactionController extends Controller
             'plans' => Plan::all(),
             'courses' => Course::all()
         ]);
+
+        /*
+            SELECT * FROM `plans`;
+            SELECT * FROM `courses`;
+        */
     }
 
     public function setUpTransaction($id)
@@ -24,15 +29,27 @@ class TransactionController extends Controller
             'plan' => Plan::findOrFail($id),
             'methodPays' => MethodPay::all(),
         ]);
+
+        /*
+            SELECT * FROM `plans` WHERE `plans`.`id` = '1' LIMIT 1;
+            SELECT * FROM `method_pays
+        */
     }
 
     public function makeTransaction(Request $request){
 
         Transaction::create($request->all());
+        /*
+            INSERT INTO `transactions` (`method_pay_id`, `plan_id`, `user_id`, `updated_at`, `created_at`) 
+                VALUES ( $request->method_pay_id, 
+                         $request->plan_id, 
+                         $request->user_id, 
+                         now(), 
+                         now()
+                        );
+        */
         
         return redirect('/paket-belajar/history')->with('success', "Pesanan paket belajar telah dibuat, silahkan selesaikan pembayaran!");
-
-        
     }
 
 
@@ -41,6 +58,9 @@ class TransactionController extends Controller
         
         return view('history', [
             'transcs' => Transaction::all()
+            /*
+                SELECT * FROM `transaction`;
+            */
         ]);
     }
 
@@ -71,7 +91,7 @@ class TransactionController extends Controller
          */
 
         
-        return "berhasil";
+        return redirect('/paket-belajar/history');
     }
 
 

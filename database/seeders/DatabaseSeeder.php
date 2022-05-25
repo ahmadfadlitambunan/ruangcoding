@@ -95,37 +95,32 @@ class DatabaseSeeder extends Seeder
             'duration' => '1 year'
         ]);
 
-        //seeder user
-        User::create([
-            'name' => "Nadya",
-            'email' => 'nadya@gmail.com',
-            'no_phone' => '085211111111',
-            'password'=>bcrypt('12345678'),
-            'gender' => 'female'
-        ]);
+        // //seeder user
+        // User::create([
+        //     'name' => "Nadya",
+        //     'email' => 'nadya@gmail.com',
+        //     'no_phone' => '085211111111',
+        //     'password'=>bcrypt('12345678'),
+        //     'gender' => 'female'
+        // ]);
 
-        User::create([
-            'name' => "Joko",
-            'email' => 'joko@gmail.com',
-            'no_phone' => '08123456789',
-            'password'=>bcrypt('abcdefghij'),
-            'gender' => 'male'
-        ]);
+        // User::create([
+        //     'name' => "Joko",
+        //     'email' => 'joko@gmail.com',
+        //     'no_phone' => '08123456789',
+        //     'password'=>bcrypt('abcdefghij'),
+        //     'gender' => 'male'
+        // ]);
 
-        User::create([
-            'name' => "Jay",
-            'email' => 'jay@gmail.com',
-            'no_phone' => '08987654321',
-            'password'=>bcrypt('testestes'),
-            'gender' => 'male'
-        ]);
+        // User::create([
+        //     'name' => "Jay",
+        //     'email' => 'jay@gmail.com',
+        //     'no_phone' => '08987654321',
+        //     'password'=>bcrypt('testestes'),
+        //     'gender' => 'male'
+        // ]);
 
-        //seeder admin
-        Admin::create([
-            'email' => 'barbie@gmail.com',
-            'name' => "Barbie",
-            'password'=>bcrypt('12345678')
-        ]);
+        //
 
         Admin::create([
             'email' => 'nadin@gmail.com',
